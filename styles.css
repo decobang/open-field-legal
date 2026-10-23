@@ -219,7 +219,7 @@ a.card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
 
 .landing-hero { display: grid; gap: 48px; align-items: center; padding-top: 64px; padding-bottom: 72px; }
 @media (min-width: 960px) { .landing-hero { grid-template-columns: 1.1fr 0.9fr; padding-top: 88px; padding-bottom: 96px; } }
-.landing-hero h1 { margin: 0; font-size: clamp(40px, 6.5vw, 76px); line-height: 1.04; letter-spacing: -0.03em; }
+.landing-hero h1 { margin: 0; font-size: clamp(38px, 5.2vw, 68px); line-height: 1.04; letter-spacing: -0.03em; }
 .landing-hero h1 em { font-style: normal; color: var(--accent); }
 .landing-hero .lede { margin: 20px 0 0; font-size: 19px; color: var(--muted); max-width: 540px; }
 .hero-visual { display: flex; justify-content: center; position: relative; }
@@ -230,11 +230,12 @@ a.card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
 
 .waitlist { margin-top: 32px; max-width: 520px; }
 .waitlist form { display: flex; gap: 10px; flex-wrap: wrap; }
-.waitlist input[type="email"] {
+.waitlist input[type="email"], .waitlist input.name {
   flex: 1 1 240px; height: 48px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line);
   background: var(--surface); color: var(--text); font-family: inherit; font-size: 16px;
 }
-.waitlist input[type="email"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.waitlist input.name { flex: 1 1 calc(50% - 5px); min-width: 0; }
+.waitlist input[type="email"]:focus, .waitlist input.name:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .waitlist .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .waitlist .note { margin: 12px 0 0; font-size: 14px; color: var(--subtle); }
 .waitlist .status { margin: 12px 0 0; font-size: 15px; font-weight: 600; min-height: 1.4em; }
@@ -289,7 +290,7 @@ a.card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
 .cta-band h2 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 38px); letter-spacing: -0.02em; }
 .cta-band p { margin: 0 auto; max-width: 520px; color: rgba(255, 255, 255, 0.78); }
 .cta-band .waitlist { margin: 28px auto 0; }
-.cta-band .waitlist input[type="email"] { border-color: transparent; }
+.cta-band .waitlist input[type="email"], .cta-band .waitlist input.name { border-color: transparent; }
 .cta-band .waitlist .note { color: rgba(255, 255, 255, 0.6); }
 .cta-band .waitlist .status.ok { color: var(--mint); }
 .cta-band .waitlist .status.err { color: #ffb4b4; }
@@ -444,8 +445,8 @@ html.snap { scroll-snap-type: y proximity; scroll-padding-top: var(--header-h); 
   .landing-hero .lede { font-size: 17px; margin-left: auto; margin-right: auto; }
   .waitlist { margin-left: auto; margin-right: auto; }
   .waitlist form { flex-direction: column; }
-  .waitlist input[type="email"], .waitlist .btn { flex: none; width: 100%; height: 52px; }
-  .waitlist input[type="email"] { text-align: center; }
+  .waitlist input[type="email"], .waitlist input.name, .waitlist .btn { flex: none; width: 100%; height: 52px; }
+  .waitlist input[type="email"], .waitlist input.name { text-align: center; }
   .page .phone { width: min(250px, 66vw); }
   .page .phone.drawn { width: 300px; zoom: 0.84; }
 
@@ -482,3 +483,4 @@ html.snap { scroll-snap-type: y proximity; scroll-padding-top: var(--header-h); 
   .site-footer .wrap { flex-direction: column; text-align: center; gap: 14px; }
   .site-footer nav { justify-content: center; }
 }
+.landing-hero h1 span, .landing-hero h1 em { display: block; white-space: nowrap; }

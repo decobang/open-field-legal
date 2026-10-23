@@ -32,11 +32,13 @@
     <div class="wrap landing-hero">
       <div>
         <p class="eyebrow">Coming soon to iPhone</p>
-        <h1>Less group chat. <em>More pickup.</em></h1>
+        <h1><span>Less group chat.</span> <em>More pickup.</em></h1>
         <p class="lede">Find a game nearby, see who's coming, and claim your spot in one tap. Free, and coming soon to iPhone.</p>
         <div class="waitlist">
         <form data-waitlist novalidate>
           <label class="hp" aria-hidden="true">Company <input name="company" tabindex="-1" autocomplete="off"></label>
+          <input class="name" type="text" name="first" placeholder="First name" autocomplete="given-name" required maxlength="50" aria-label="First name" id="hero-first">
+          <input class="name" type="text" name="last" placeholder="Last name" autocomplete="family-name" required maxlength="50" aria-label="Last name" id="hero-last">
           <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address" id="hero-email">
           <button class="btn" type="submit">Join the Beta</button>
         </form>
@@ -173,6 +175,8 @@
       <div class="waitlist">
         <form data-waitlist novalidate>
           <label class="hp" aria-hidden="true">Company <input name="company" tabindex="-1" autocomplete="off"></label>
+          <input class="name" type="text" name="first" placeholder="First name" autocomplete="given-name" required maxlength="50" aria-label="First name" id="cta-first">
+          <input class="name" type="text" name="last" placeholder="Last name" autocomplete="family-name" required maxlength="50" aria-label="Last name" id="cta-last">
           <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address" id="cta-email">
           <button class="btn" type="submit">Join the Beta</button>
         </form>
@@ -214,14 +218,17 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var email = form.email.value.trim();
+        var first = form.first.value.trim();
+        var last = form.last.value.trim();
         status.className = 'status';
         if (form.company.value) { status.textContent = "You're on the list!"; status.className = 'status ok'; return; }
+        if (!first || !last) { status.textContent = 'Enter your first and last name.'; status.className = 'status err'; return; }
         if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { status.textContent = 'Enter a valid email address.'; status.className = 'status err'; return; }
         button.disabled = true;
         fetch(URL, {
           method: 'POST',
           headers: { apikey: KEY, Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ p_email: email })
+          body: JSON.stringify({ p_email: email, p_first_name: first, p_last_name: last })
         }).then(function (r) {
           if (r.ok) {
             status.textContent = "You're in! We'll email you when the beta opens.";
