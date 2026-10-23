@@ -215,10 +215,10 @@ a.card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
 .btn:disabled { opacity: 0.6; cursor: default; }
 .btn-small { height: 38px; padding: 0 16px; font-size: 14px; box-shadow: none; }
 .site-header .btn-small { margin-left: 8px; }
-@media (max-width: 520px) { .site-header .btn-small { display: none; } }
 
-.landing-hero { display: grid; gap: 48px; align-items: center; padding: 64px 0 72px; }
-@media (min-width: 960px) { .landing-hero { grid-template-columns: 1.1fr 0.9fr; padding: 88px 0 96px; } }
+
+.landing-hero { display: grid; gap: 48px; align-items: center; padding-top: 64px; padding-bottom: 72px; }
+@media (min-width: 960px) { .landing-hero { grid-template-columns: 1.1fr 0.9fr; padding-top: 88px; padding-bottom: 96px; } }
 .landing-hero h1 { margin: 0; font-size: clamp(40px, 6vw, 64px); line-height: 1.04; letter-spacing: -0.03em; }
 .landing-hero h1 em { font-style: normal; color: var(--accent); }
 .landing-hero .lede { margin: 20px 0 0; font-size: 19px; color: var(--muted); max-width: 540px; }
@@ -413,7 +413,7 @@ html.snap { scroll-snap-type: y proximity; scroll-padding-top: var(--header-h); 
   scroll-snap-align: start; padding: 48px 0;
 }
 .page.section { padding: 48px 0; }
-.page .landing-hero { padding: 0; width: 100%; }
+.page .landing-hero { padding-top: 0; padding-bottom: 0; width: 100%; }
 .snap .site-footer { scroll-snap-align: end; }
 .page .phone { width: min(300px, calc((100svh - var(--header-h) - 120px) * 9 / 19.5)); }
 .page .card-pair { width: min(420px, 100%, calc(100svh - var(--header-h) - 120px)); }
@@ -428,3 +428,57 @@ html.snap { scroll-snap-type: y proximity; scroll-padding-top: var(--header-h); 
 @media (max-height: 860px) { .page .phone.drawn { zoom: 0.88; } }
 @media (max-height: 780px) { .page .phone.drawn { zoom: 0.78; } }
 @media (max-height: 700px) { .page .phone.drawn { zoom: 0.68; } }
+
+/* Phones: designed for scrolling, not shrunk from the desktop layout. The hero fills the first screen;
+   the other sections take their natural height. */
+@media (max-width: 719px) {
+  html.snap { scroll-snap-type: none; }
+  .page:not(#join) { min-height: 0; }
+  .page.section { padding: 64px 0; }
+  .site-nav a:not(.btn) { display: none; }
+  .site-header .btn-small { margin-left: 0; height: 36px; padding: 0 16px; }
+
+  #join { min-height: calc(100svh - var(--header-h)); padding: 36px 0 48px; }
+  .landing-hero { gap: 36px; text-align: center; }
+  .landing-hero h1 { font-size: 38px; }
+  .landing-hero .lede { font-size: 17px; margin-left: auto; margin-right: auto; }
+  .waitlist { margin-left: auto; margin-right: auto; }
+  .waitlist form { flex-direction: column; }
+  .waitlist input[type="email"], .waitlist .btn { flex: none; width: 100%; height: 52px; }
+  .waitlist input[type="email"] { text-align: center; }
+  .page .phone { width: min(250px, 66vw); }
+  .page .phone.drawn { width: 300px; zoom: 0.84; }
+
+  .section-head { margin-bottom: 24px; }
+  .section-head h2 { font-size: 30px; }
+  .section-head p { font-size: 17px; }
+  .split { gap: 32px; }
+  .split-text { display: contents; }
+  #features .split > .split-text > .section-head { order: 1; margin-bottom: 0; }
+  #features .split > .split-visual { order: 2; }
+  #features .split > .split-text > .features { order: 3; }
+  .features { gap: 10px; }
+  .feature { display: grid; grid-template-columns: 40px 1fr; gap: 0 14px; padding: 16px; }
+  .feature .icon { grid-row: span 2; width: 40px; height: 40px; margin: 2px 0 0; }
+  .feature h3 { font-size: 16px; margin-bottom: 2px; }
+
+  .checks { gap: 12px; margin-top: 20px; }
+  .card-pair { width: min(340px, 92vw); }
+  .stat-pills { gap: 8px; }
+  .stat-pills span { font-size: 13px; padding: 7px 12px; }
+
+  .faq summary { padding: 16px 0; }
+
+  .page-cta { padding: 16px 0 56px; }
+  .page-cta .cta-band { padding: 48px 20px; border-radius: 24px; }
+  .page-cta .cta-band h2 { font-size: 32px; }
+  .page-cta .cta-band p { font-size: 16px; }
+
+  #support .cards { gap: 10px; }
+  #support .card { padding: 18px 20px; }
+  .card h2 { font-size: 17px; }
+
+  .site-footer { padding: 28px 0 40px; }
+  .site-footer .wrap { flex-direction: column; text-align: center; gap: 14px; }
+  .site-footer nav { justify-content: center; }
+}
