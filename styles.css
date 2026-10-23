@@ -219,7 +219,7 @@ a.card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
 
 .landing-hero { display: grid; gap: 48px; align-items: center; padding-top: 64px; padding-bottom: 72px; }
 @media (min-width: 960px) { .landing-hero { grid-template-columns: 1.1fr 0.9fr; padding-top: 88px; padding-bottom: 96px; } }
-.landing-hero h1 { margin: 0; font-size: clamp(40px, 6vw, 64px); line-height: 1.04; letter-spacing: -0.03em; }
+.landing-hero h1 { margin: 0; font-size: clamp(40px, 6.5vw, 76px); line-height: 1.04; letter-spacing: -0.03em; }
 .landing-hero h1 em { font-style: normal; color: var(--accent); }
 .landing-hero .lede { margin: 20px 0 0; font-size: 19px; color: var(--muted); max-width: 540px; }
 .hero-visual { display: flex; justify-content: center; position: relative; }
