@@ -10,6 +10,14 @@
 <meta property="og:title" content="Open Field · Pickup Soccer Near You">
 <meta property="og:description" content="Less group chat, more pickup. Find a game near you and claim your spot in one tap. Coming soon to iPhone.">
 <meta property="og:site_name" content="Open Field">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://openfieldsoccer.com/">
+<meta property="og:image" content="https://openfieldsoccer.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Open Field: Less group chat. More pickup. Coming soon to iPhone.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://openfieldsoccer.com/og.png">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/barlow-condensed-800-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -207,39 +215,54 @@
   </section>
 </main>
 <script>
-  // The beta waitlist: adds the email through Supabase's join_waitlist() with the public (anon) key,
-  // which can only add to the list, never read it.
+  // The beta waitlist: posts to the join-waitlist function (Supabase), which checks the Turnstile bot test,
+  // saves the sign-up and sends the "You're on the list" email. The publishable key only identifies the
+  // project; the function does its own checks.
   (function () {
-    var URL = "https://pbialxspsjzfcvvsypha.supabase.co/rest/v1/rpc/join_waitlist";
+    var FUNCTION_URL = "https://pbialxspsjzfcvvsypha.supabase.co/functions/v1/join-waitlist";
     var KEY = "sb_publishable_Fw7pRk2_kushIcjmRXukkg_vAREuu90";
-    document.querySelectorAll('[data-waitlist]').forEach(function (form) {
+    // Cloudflare Turnstile's public site key (Cloudflare → Turnstile). Empty: no bot check on the page.
+    var TURNSTILE_SITE_KEY = "";
+    var forms = document.querySelectorAll('[data-waitlist]');
+    if (TURNSTILE_SITE_KEY) {
+      forms.forEach(function (form) {
+        var box = document.createElement('div');
+        box.className = 'cf-turnstile';
+        box.setAttribute('data-sitekey', TURNSTILE_SITE_KEY);
+        box.setAttribute('data-size', 'flexible');
+        box.setAttribute('data-appearance', 'interaction-only');
+        form.appendChild(box);
+      });
+      var tag = document.createElement('script');
+      tag.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      tag.async = true; tag.defer = true;
+      document.head.appendChild(tag);
+    }
+    forms.forEach(function (form) {
       var status = form.parentNode.querySelector('.status');
       var button = form.querySelector('button');
+      function show(text, ok) { status.textContent = text; status.className = 'status ' + (ok ? 'ok' : 'err'); }
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var email = form.email.value.trim();
-        var first = form.first.value.trim();
-        var last = form.last.value.trim();
-        status.className = 'status';
-        if (form.company.value) { status.textContent = "You're on the list!"; status.className = 'status ok'; return; }
-        if (!first || !last) { status.textContent = 'Enter your first and last name.'; status.className = 'status err'; return; }
-        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { status.textContent = 'Enter a valid email address.'; status.className = 'status err'; return; }
+        var first = form.first.value.trim(), last = form.last.value.trim(), email = form.email.value.trim();
+        if (form.company.value) { show("You're in! We'll email you when the beta opens.", true); return; }
+        if (!first || !last) { show('Enter your first and last name.'); return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { show('Enter a valid email address.'); return; }
+        var tokenField = form.querySelector('[name="cf-turnstile-response"]');
         button.disabled = true;
-        fetch(URL, {
+        fetch(FUNCTION_URL, {
           method: 'POST',
-          headers: { apikey: KEY, Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ p_email: email, p_first_name: first, p_last_name: last })
+          headers: { apikey: KEY, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ firstName: first, lastName: last, email: email, token: tokenField ? tokenField.value : '' })
         }).then(function (r) {
-          if (r.ok) {
-            status.textContent = "You're in! We'll email you when the beta opens.";
-            status.className = 'status ok';
+          return r.json().then(function (d) {
+            if (!r.ok) throw new Error(d && d.error);
+            show("You're in! Check your inbox, and we'll email you when the beta opens.", true);
             form.reset();
-          } else {
-            return r.json().then(function (d) { throw new Error(d && d.message); });
-          }
+            if (window.turnstile) window.turnstile.reset();
+          });
         }).catch(function (err) {
-          status.textContent = (err && err.message) || 'Something went wrong. Try again in a moment.';
-          status.className = 'status err';
+          show((err && err.message) || 'Something went wrong. Try again in a moment.');
         }).finally(function () { button.disabled = false; });
       });
     });
