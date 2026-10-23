@@ -3,46 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Open Field</title>
-<meta name="description" content="Open Field: organize and find pickup soccer near you.">
-<style>
-  :root { --bg: #F3F6FA; --card: #FFFFFF; --text: #0E1A2B; --muted: #4A5A70; --line: #D9E1EB; --accent: #1E7A57; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #0B1524; --card: #14223A; --text: #E8EEF6; --muted: #9DACC2; --line: #24344F; --accent: #A8E6CF; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-  .brand { font-weight: 800; font-style: italic; letter-spacing: .02em; text-transform: uppercase; color: var(--accent); text-decoration: none; font-size: 15px; }
-  h1 { font-size: 32px; line-height: 1.2; margin: 12px 0 4px; }
-  h2 { font-size: 22px; margin: 40px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); }
-  h3 { font-size: 18px; margin: 24px 0 4px; }
-  p, li { color: var(--text); }
-  .muted { color: var(--muted); }
-  ul { padding-left: 22px; }
-  li { margin: 4px 0; }
-  a { color: var(--accent); }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; background: var(--card); border-radius: 12px; overflow: hidden; }
-  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
-  th { font-weight: 600; }
-  tr:last-child td { border-bottom: 0; }
-  .table-wrap { overflow-x: auto; }
-  nav.toc { background: var(--card); border-radius: 12px; padding: 12px 16px; margin: 24px 0; }
-  nav.toc ol { margin: 0; padding-left: 20px; }
-  footer { margin-top: 48px; color: var(--muted); font-size: 15px; }
-</style>
+<title>Open Field · Pickup for Everyone</title>
+<meta name="description" content="Open Field helps you find and organize pickup soccer near you. Support, privacy and terms.">
+<meta name="theme-color" content="#f3f6fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1524" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Open Field · Pickup for Everyone">
+<meta property="og:description" content="Open Field helps you find and organize pickup soccer near you. Support, privacy and terms.">
+<meta property="og:site_name" content="Open Field">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800&display=swap">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="/" aria-label="Open Field home">Open Field</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/#support">Support</a>
+    </nav>
+  </div>
+</header>
 <main>
-<h1>Open Field</h1>
-<p class="muted"><strong>Open Field</strong>: organize and find pickup soccer near you.</p>
-<ul>
-  <li><a href="privacy.html">Privacy Policy</a></li>
-  <li><a href="terms.html">Terms of Service</a></li>
-</ul>
-<h2>Support</h2>
-<p>Questions, problems, safety concerns or data requests: <a href="mailto:decosdevlab@gmail.com">decosdevlab@gmail.com</a>.</p>
-<p>To delete your account, open the app and go to <em>Profile → Delete Account</em>.</p>
+  <div class="wrap">
+    <section class="hero">
+      <span class="wordmark">Open Field</span>
+      <p class="tagline">PICKUP FOR EVERYONE</p>
+      <p class="lede">Find a pickup game near you tonight, or round up your own group. Vote in, out or maybe, and build your player card as you play.</p>
+    </section>
+    <section class="cards" id="support" aria-label="Support">
+      <a class="card" href="mailto:decosdevlab@gmail.com?subject=Open%20Field">
+        <h2>Get Support</h2>
+        <p>Questions, problems, safety concerns or requests about your data. We usually reply within a day.</p>
+        <span class="go">decosdevlab@gmail.com</span>
+      </a>
+      <div class="card">
+        <h2>Delete Your Account</h2>
+        <p>You can delete your account and its data from the app at any time:</p>
+        <ol class="steps">
+          <li>Open Open Field and go to <strong>Profile</strong>.</li>
+          <li>Scroll down and tap <strong>Delete Account</strong>.</li>
+        </ol>
+        <p style="margin-top:10px">If you run a group, hand it over or delete it first.</p>
+      </div>
+      <a class="card" href="/privacy">
+        <h2>Privacy Policy</h2>
+        <p>What we collect, how it's used, who can see it, and your choices.</p>
+        <span class="go">Read the policy →</span>
+      </a>
+      <a class="card" href="/terms">
+        <h2>Terms of Service</h2>
+        <p>The rules for using Open Field, playing safely and keeping the community respectful.</p>
+        <span class="go">Read the terms →</span>
+      </a>
+    </section>
+  </div>
 </main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="wordmark">Open Field</span>
+    <nav aria-label="Footer">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/#support">Support</a>
+      <a href="mailto:decosdevlab@gmail.com">decosdevlab@gmail.com</a>
+    </nav>
+    <p>© 2026 David Coggin. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>

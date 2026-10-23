@@ -5,58 +5,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy · Open Field</title>
 <meta name="description" content="How Open Field collects, uses and protects your information.">
-<style>
-  :root { --bg: #F3F6FA; --card: #FFFFFF; --text: #0E1A2B; --muted: #4A5A70; --line: #D9E1EB; --accent: #1E7A57; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #0B1524; --card: #14223A; --text: #E8EEF6; --muted: #9DACC2; --line: #24344F; --accent: #A8E6CF; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-  .brand { font-weight: 800; font-style: italic; letter-spacing: .02em; text-transform: uppercase; color: var(--accent); text-decoration: none; font-size: 15px; }
-  h1 { font-size: 32px; line-height: 1.2; margin: 12px 0 4px; }
-  h2 { font-size: 22px; margin: 40px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); }
-  h3 { font-size: 18px; margin: 24px 0 4px; }
-  p, li { color: var(--text); }
-  .muted { color: var(--muted); }
-  ul { padding-left: 22px; }
-  li { margin: 4px 0; }
-  a { color: var(--accent); }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; background: var(--card); border-radius: 12px; overflow: hidden; }
-  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
-  th { font-weight: 600; }
-  tr:last-child td { border-bottom: 0; }
-  .table-wrap { overflow-x: auto; }
-  nav.toc { background: var(--card); border-radius: 12px; padding: 12px 16px; margin: 24px 0; }
-  nav.toc ol { margin: 0; padding-left: 20px; }
-  footer { margin-top: 48px; color: var(--muted); font-size: 15px; }
-</style>
+<meta name="theme-color" content="#f3f6fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1524" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Privacy Policy · Open Field">
+<meta property="og:description" content="How Open Field collects, uses and protects your information.">
+<meta property="og:site_name" content="Open Field">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800&display=swap">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="/" aria-label="Open Field home">Open Field</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/privacy" aria-current="page">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/#support">Support</a>
+    </nav>
+  </div>
+</header>
 <main>
-<a class="brand" href="./">Open Field</a>
-<h1>Privacy Policy</h1>
-<p class="muted">Last updated: October 23, 2026</p>
-
+  <div class="wrap">
+    <div class="doc-hero">
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="doc-meta">Last updated October 23, 2026 · Open Field, operated by David Coggin</p>
+    </div>
+    <div class="doc-layout">
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-title">On this page</p>
+        <ol>
+        <li><a href="#collect">Information We Collect</a></li>
+        <li><a href="#location">Location and Camera</a></li>
+        <li><a href="#device">Information Kept Only on Your Phone</a></li>
+        <li><a href="#use">How We Use Information</a></li>
+        <li><a href="#visible">Who Can See What</a></li>
+        <li><a href="#share">Service Providers and Sharing</a></li>
+        <li><a href="#retention">How Long We Keep Information</a></li>
+        <li><a href="#rights">Your Choices and Rights</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#children">Age Requirement</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+        </ol>
+      </aside>
+      <article class="doc">
+        <details class="toc-mobile">
+          <summary>On this page</summary>
+          <ol>
+        <li><a href="#collect">Information We Collect</a></li>
+        <li><a href="#location">Location and Camera</a></li>
+        <li><a href="#device">Information Kept Only on Your Phone</a></li>
+        <li><a href="#use">How We Use Information</a></li>
+        <li><a href="#visible">Who Can See What</a></li>
+        <li><a href="#share">Service Providers and Sharing</a></li>
+        <li><a href="#retention">How Long We Keep Information</a></li>
+        <li><a href="#rights">Your Choices and Rights</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#children">Age Requirement</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+          </ol>
+        </details>
+        <section class="summary" aria-label="Summary">
+          <h2>The short version</h2>
+          <ul>
+            <li>We don't sell your information, use it for advertising, or track you across other apps.</li>
+            <li>Your location is used for nearby searches and check-in, and isn't stored.</li>
+            <li>Your email and birth year are private. Your name, username and player card are visible to other players.</li>
+            <li>You can delete your account anytime in <em>Profile → Delete Account</em>.</li>
+          </ul>
+          <p class="fine">This summary is for convenience; the full policy below is what applies.</p>
+        </section>
 <p><strong>Open Field</strong> is an app for organizing pickup soccer. Players create and join groups, schedule events, say whether they're in, and build a player card from the games they play. This policy explains what information Open Field collects, how it's used and shared, and the choices you have.</p>
 <p><strong>Open Field</strong> is run by <strong>David Coggin</strong>, an individual developer (<strong>"we"</strong>, <strong>"us"</strong>). If you have a question about this policy, email <a href="mailto:decosdevlab@gmail.com">decosdevlab@gmail.com</a>.</p>
-
-<nav class="toc" aria-label="Contents">
-<ol>
-  <li><a href="#collect">Information We Collect</a></li>
-  <li><a href="#location">Location and Camera</a></li>
-  <li><a href="#device">Information Kept Only on Your Phone</a></li>
-  <li><a href="#use">How We Use Information</a></li>
-  <li><a href="#visible">Who Can See What</a></li>
-  <li><a href="#share">Service Providers and Sharing</a></li>
-  <li><a href="#retention">How Long We Keep Information</a></li>
-  <li><a href="#rights">Your Choices and Rights</a></li>
-  <li><a href="#security">Security</a></li>
-  <li><a href="#children">Age Requirement</a></li>
-  <li><a href="#changes">Changes to This Policy</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ol>
-</nav>
 
 <h2 id="collect">1. Information We Collect</h2>
 
@@ -112,7 +138,7 @@
   <li>To create and run your account and sign you in.</li>
   <li>To provide Open Field's features: groups, events, answers, waitlists, rosters, invites, check-in, Who Played, thumbs up, your player card and your game history.</li>
   <li>To show public events and groups near you, and to suggest games and groups that suit your level and age.</li>
-  <li>To keep Open Field safe: to review reports, remove content and accounts that break our <a href="terms.html">Terms of Service</a>, apply blocks and removals from groups, filter offensive words, and prevent abuse such as guessing codes.</li>
+  <li>To keep Open Field safe: to review reports, remove content and accounts that break our <a href="/terms">Terms of Service</a>, apply blocks and removals from groups, filter offensive words, and prevent abuse such as guessing codes.</li>
   <li>To answer your questions and requests.</li>
   <li>To comply with the law and protect the rights and safety of our players and others.</li>
 </ul>
@@ -178,12 +204,23 @@
 <p>We may update this policy as Open Field changes. We'll change the "Last updated" date above, and for significant changes we'll <strong>let you know in the app</strong> before they take effect.</p>
 
 <h2 id="contact">12. Contact</h2>
-<p><strong>David Coggin</strong><br>
-Email: <a href="mailto:decosdevlab@gmail.com">decosdevlab@gmail.com</a></p>
-
-<footer>
-  <p><a href="terms.html">Terms of Service</a> · <a href="./">Open Field</a></p>
-</footer>
+<div class="contact-card"><p><strong>David Coggin</strong><br>
+Email: <a href="mailto:decosdevlab@gmail.com">decosdevlab@gmail.com</a></p></div>
+      </article>
+    </div>
+  </div>
 </main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="wordmark">Open Field</span>
+    <nav aria-label="Footer">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/#support">Support</a>
+      <a href="mailto:decosdevlab@gmail.com">decosdevlab@gmail.com</a>
+    </nav>
+    <p>© 2026 David Coggin. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>
