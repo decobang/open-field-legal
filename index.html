@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Open Field · Pickup for Everyone</title>
-<meta name="description" content="Open Field helps you find and organize pickup soccer near you. Support, privacy and terms.">
+<title>Open Field · Pickup Soccer Near You</title>
+<meta name="description" content="Find pickup soccer games near you, see who's in before you show up, and run your group in one place. Coming soon to iPhone. Join the beta.">
 <meta name="theme-color" content="#f3f6fa" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b1524" media="(prefers-color-scheme: dark)">
-<meta property="og:title" content="Open Field · Pickup for Everyone">
-<meta property="og:description" content="Open Field helps you find and organize pickup soccer near you. Support, privacy and terms.">
+<meta property="og:title" content="Open Field · Pickup Soccer Near You">
+<meta property="og:description" content="Find pickup soccer games near you, see who's in before you show up, and run your group in one place. Coming soon to iPhone.">
 <meta property="og:site_name" content="Open Field">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -20,47 +20,227 @@
   <div class="wrap">
     <a class="wordmark" href="/" aria-label="Open Field home">Open Field</a>
     <nav class="site-nav" aria-label="Site">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-      <a href="/#support">Support</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+      <a href="#support">Support</a>
+      <a class="btn btn-small" href="#join">Join the Beta</a>
     </nav>
   </div>
 </header>
 <main>
   <div class="wrap">
-    <section class="hero">
-      <span class="wordmark">Open Field</span>
-      <p class="tagline">PICKUP FOR EVERYONE</p>
-      <p class="lede">Find a pickup game near you tonight, or round up your own group. Vote in, out or maybe, and build your player card as you play.</p>
-    </section>
-    <section class="cards" id="support" aria-label="Support">
-      <a class="card" href="mailto:decosdevlab@gmail.com?subject=Open%20Field">
-        <h2>Get Support</h2>
-        <p>Have a question, a problem, a safety concern or a request about your data? Email us. We usually reply within a day.</p>
-        <span class="go">decosdevlab@gmail.com</span>
-      </a>
-      <div class="card">
-        <h2>Delete Your Account</h2>
-        <p>You can delete your account and its data from the app at any time:</p>
-        <ol class="steps">
-          <li>In the Open Field app, go to <strong>Profile</strong>.</li>
-          <li>Scroll down and tap <strong>Delete Account</strong>.</li>
-        </ol>
-        <p style="margin-top:10px">If you run a group, hand it over or delete it first.</p>
+    <section class="landing-hero" id="join">
+      <div>
+        <p class="eyebrow">Coming soon to iPhone</p>
+        <h1>Pickup soccer, <em>without the group-chat chaos.</em></h1>
+        <p class="lede">Find games near you, see who's in before you show up, and run your group in one place. Open Field is free, and the beta is opening soon.</p>
+        <div class="waitlist">
+        <form data-waitlist novalidate>
+          <label class="hp" aria-hidden="true">Company <input name="company" tabindex="-1" autocomplete="off"></label>
+          <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address" id="hero-email">
+          <button class="btn" type="submit">Join the Beta</button>
+        </form>
+        <p class="status" role="status" aria-live="polite"></p>
+        <p class="note">We'll email you once when the iPhone beta opens. No spam, and you can ask us to remove you anytime.</p>
       </div>
-      <a class="card" href="/privacy">
-        <h2>Privacy Policy</h2>
-        <p>What we collect, how it's used, who can see it, and your choices.</p>
-        <span class="go">Read the policy →</span>
-      </a>
-      <a class="card" href="/terms">
-        <h2>Terms of Service</h2>
-        <p>The rules for using Open Field, playing safely and keeping the community respectful.</p>
-        <span class="go">Read the terms →</span>
-      </a>
+      </div>
+      <div class="hero-visual">
+        <div class="phone">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="/images/pitch-dark.webp">
+            <img src="/images/pitch-light.webp" alt="Open Field's welcome screen: a pitch with an open spot waiting for you" width="640" height="1387">
+          </picture>
+        </div>
+      </div>
     </section>
   </div>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">For players</p>
+        <h2>Everything you need to get a game</h2>
+        <p>No more scrolling through group chats to find out if a game is on, where it is, or who's coming.</p>
+      </div>
+      <div class="split">
+        <div class="split-visual">
+          <div class="phone">
+            <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="/images/whosin-dark.webp">
+            <img src="/images/whosin-light.webp" alt="An event in Open Field showing who's in, who's a maybe and who's out, with your answer" width="640" height="1387" loading="lazy">
+          </picture>
+          </div>
+        </div>
+        <div class="features features-2">
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><h3>Find games near you</h3><p>See drop-in games around you on a list or a map, filtered by distance, level, price and open spots.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16.5 9.5"/></svg></div><h3>In, maybe or out</h3><p>One tap tells the organizer you're coming. Full games keep a waitlist, so you know your place.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div><h3>Never miss kickoff</h3><p>Set a reminder before the game, check in when you arrive, and give teammates a thumbs up after.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></svg></div><h3>Join in seconds</h3><p>Join a public group from its page, or a private one with an invite code or by scanning its QR code.</p></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="organizers">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">For organizers</p>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Run your group without the spreadsheet</h2>
+          <p>My Team puts everything an organizer needs in one place.</p>
+        </div>
+        <ul class="checks">
+          <li><div><strong>Schedule in a minute</strong><span>Set the venue, format, cost and spots once, then repeat it weekly.</span></div></li>
+          <li><div><strong>Know who's coming</strong><span>See who's in, who's on the fence, and who hasn't answered yet.</span></div></li>
+          <li><div><strong>Invite your way</strong><span>Share an invite code or QR code, or add players by scanning their Player Code.</span></div></li>
+          <li><div><strong>Track your turnout</strong><span>Tick who played after each game and watch average turnout and show-up rate.</span></div></li>
+        </ul>
+      </div>
+      <div class="split-visual">
+        <div class="phone" aria-label="Open Field's My Team screen for an organizer" role="img">
+          <div class="screen">
+            <div class="island"></div>
+            <div class="status-bar"><span>9:41</span><span>●●●</span></div>
+            <div class="content">
+              <div class="team-banner"></div>
+              <div class="team-id"><div class="crest">SF</div><div><div class="name">Sunday FC</div><div class="sub">18 Players · Public</div></div></div>
+              <div class="label">Needs Attention</div>
+              <div class="app-card"><div class="attention"><span class="dot"></span><span>4 Players Haven't Answered</span></div><div class="row" style="font-size:11px">Sunday 7v7 · Tomorrow, 9:00 AM</div></div>
+              <div class="label">Next Event</div>
+              <div class="app-card">
+                <span class="title">Sunday 7v7</span>
+                <div class="row"><i></i>Sun, Nov 2 · 9:00 AM · Riverside Park</div>
+                <div class="foot"><div class="avatars"><span>DA</span><span>MJ</span><span>SK</span><em>12 In · 2 Maybe</em></div></div>
+              </div>
+              <div class="label">Team Stats</div>
+              <div class="tiles">
+                <div class="tile"><b>18</b><span>Players</span></div>
+                <div class="tile"><b>24</b><span>Games Played</span></div>
+                <div class="tile"><b>13</b><span>Avg Turnout</span></div>
+                <div class="tile"><b>92%</b><span>Show-Up Rate</span></div>
+              </div>
+            </div>
+            <div class="tab-bar"><span>Discover</span><span>Groups</span><span class="on">My Team</span><span>Profile</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="player-card">
+    <div class="wrap split reverse">
+      <div>
+        <p class="eyebrow">Your player card</p>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>A card you earn on the pitch</h2>
+          <p>Your player card is built only from the games you actually play. No self-ratings, no inflated stats.</p>
+        </div>
+        <ul class="checks">
+          <li><div><strong>Reliability</strong><span>Do you turn up when you say you're in?</span></div></li>
+          <li><div><strong>Streak</strong><span>How many weeks in a row you've played.</span></div></li>
+          <li><div><strong>Sportsmanship</strong><span>The thumbs up teammates give you after games.</span></div></li>
+        </ul>
+        <div class="stat-pills"><span><b>Tap to flip</b>see what each stat means</span><span><b>Rookie</b>for your first 3 games</span><span><b>Colors</b>change as your rating climbs</span></div>
+      </div>
+      <div class="split-visual">
+        <div class="card-pair">
+          <img class="card-back" src="/images/card-back.webp" alt="The back of an Open Field player card, explaining each stat: Games, Reliability, Experience, Streak, Sportsmanship and Host" width="528" height="800" loading="lazy">
+          <img class="card-front" src="/images/card-front.webp" alt="The front of an Open Field player card for David: 55 overall, midfielder and forward, Rookie" width="528" height="800" loading="lazy">
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">FAQ</p><h2>Questions, answered</h2></div>
+      <div class="faq">
+        <details><summary>Is Open Field free?</summary><p>Yes, Open Field is free to use. Some games have a cost per player set by the organizer, which you pay them directly, outside the app.</p></details>
+        <details><summary>When can I try it?</summary><p>We're opening a beta on iPhone soon. Join the waitlist and we'll email you the invite as soon as it's ready.</p></details>
+        <details><summary>Is there an Android version?</summary><p>Not yet. Open Field is launching on iPhone first, and Android is planned for later.</p></details>
+        <details><summary>Who can join?</summary><p>Anyone 16 or older. Public groups and drop-in games are open to everyone nearby; private groups need an invite code from their organizer.</p></details>
+        <details><summary>What's a drop-in game?</summary><p>A public game that anyone nearby can join, even if they aren't in the group that runs it. Drop-ins show up in Discover.</p></details>
+        <details><summary>Where is Open Field available?</summary><p>In the United States for now.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="cta-band">
+      <h2>Be first on the pitch</h2>
+      <p>Join the beta waitlist and help shape Open Field before it launches.</p>
+      <div class="waitlist">
+        <form data-waitlist novalidate>
+          <label class="hp" aria-hidden="true">Company <input name="company" tabindex="-1" autocomplete="off"></label>
+          <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address" id="cta-email">
+          <button class="btn" type="submit">Join the Beta</button>
+        </form>
+        <p class="status" role="status" aria-live="polite"></p>
+        <p class="note">We'll email you once when the iPhone beta opens. No spam, and you can ask us to remove you anytime.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="section" id="support">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">Support</p><h2>Help and legal</h2></div>
+      <div class="cards" style="padding-bottom:0">
+        <a class="card" href="mailto:decosdevlab@gmail.com?subject=Open%20Field">
+          <h2>Get Support</h2>
+          <p>Have a question, a problem, a safety concern or a request about your data? Email us. We usually reply within a day.</p>
+          <span class="go">decosdevlab@gmail.com</span>
+        </a>
+        <div class="card">
+          <h2>Delete Your Account</h2>
+          <p>You can delete your account and its data from the app at any time:</p>
+          <ol class="steps">
+            <li>In the Open Field app, go to <strong>Profile</strong>.</li>
+            <li>Scroll down and tap <strong>Delete Account</strong>.</li>
+          </ol>
+          <p style="margin-top:10px">If you run a group, hand it over or delete it first.</p>
+        </div>
+        <a class="card" href="/privacy"><h2>Privacy Policy</h2><p>What we collect, how it's used, who can see it, and your choices.</p><span class="go">Read the policy →</span></a>
+        <a class="card" href="/terms"><h2>Terms of Service</h2><p>The rules for using Open Field, playing safely and keeping the community respectful.</p><span class="go">Read the terms →</span></a>
+      </div>
+    </div>
+  </section>
 </main>
+<script>
+  // The beta waitlist: adds the email through Supabase's join_waitlist() with the public (anon) key,
+  // which can only add to the list, never read it.
+  (function () {
+    var URL = "https://pbialxspsjzfcvvsypha.supabase.co/rest/v1/rpc/join_waitlist";
+    var KEY = "sb_publishable_Fw7pRk2_kushIcjmRXukkg_vAREuu90";
+    document.querySelectorAll('[data-waitlist]').forEach(function (form) {
+      var status = form.parentNode.querySelector('.status');
+      var button = form.querySelector('button');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = form.email.value.trim();
+        status.className = 'status';
+        if (form.company.value) { status.textContent = "You're on the list!"; status.className = 'status ok'; return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { status.textContent = 'Enter a valid email address.'; status.className = 'status err'; return; }
+        button.disabled = true;
+        fetch(URL, {
+          method: 'POST',
+          headers: { apikey: KEY, Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ p_email: email })
+        }).then(function (r) {
+          if (r.ok) {
+            status.textContent = "You're on the list! We'll email you when the beta opens.";
+            status.className = 'status ok';
+            form.reset();
+          } else {
+            return r.json().then(function (d) { throw new Error(d && d.message); });
+          }
+        }).catch(function (err) {
+          status.textContent = (err && err.message) || 'Something went wrong. Try again in a moment.';
+          status.className = 'status err';
+        }).finally(function () { button.disabled = false; });
+      });
+    });
+  })();
+</script>
 <footer class="site-footer">
   <div class="wrap">
     <span class="wordmark">Open Field</span>
