@@ -30,6 +30,15 @@
   }
 }
 
+/* The wordmark's font, served from this site (no third-party font service). SIL Open Font License. */
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/barlow-condensed-800-italic.woff2") format("woff2");
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; -webkit-text-size-adjust: 100%; }
 body {
