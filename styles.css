@@ -399,3 +399,32 @@ a.card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
 .card-pair .card-front { right: 2%; top: 0; transform: rotate(5deg); }
 .site-nav a.btn, .site-nav a.btn:hover { color: var(--brand); background: var(--mint); padding: 0 16px; }
 .waitlist .status:empty { display: none; }
+
+/* Full-screen pages on the landing page (html.snap): each section fills the screen below the header and a
+   scroll snaps to the next. Forced on large screens, where every section fits; gentle on phones, where
+   sections are taller than one screen. Phone mockups scale to the screen height so a section fits. */
+:root { --header-h: 64px; }
+html.snap { scroll-snap-type: y proximity; scroll-padding-top: var(--header-h); }
+@media (min-width: 960px) and (min-height: 640px) {
+  html.snap { scroll-snap-type: y mandatory; }
+}
+.page {
+  min-height: calc(100svh - var(--header-h)); display: flex; flex-direction: column; justify-content: center;
+  scroll-snap-align: start; padding: 48px 0;
+}
+.page.section { padding: 48px 0; }
+.page .landing-hero { padding: 0; width: 100%; }
+.snap .site-footer { scroll-snap-align: end; }
+.page .phone { width: min(300px, calc((100svh - var(--header-h) - 120px) * 9 / 19.5)); }
+.page .card-pair { width: min(420px, 100%, calc(100svh - var(--header-h) - 120px)); }
+.page .section-head { margin-bottom: 28px; }
+.page-cta .cta-band { margin: 0; padding: 88px 32px; }
+.page-cta .cta-band h2 { font-size: clamp(32px, 5vw, 52px); }
+.page-cta .cta-band p { font-size: 19px; }
+#support .card { padding: 20px 24px; }
+.page > .wrap { width: 100%; }
+/* The drawn mockup has fixed-size contents: scale the whole phone on shorter screens instead. */
+.page .phone.drawn { width: 300px; }
+@media (max-height: 860px) { .page .phone.drawn { zoom: 0.88; } }
+@media (max-height: 780px) { .page .phone.drawn { zoom: 0.78; } }
+@media (max-height: 700px) { .page .phone.drawn { zoom: 0.68; } }
