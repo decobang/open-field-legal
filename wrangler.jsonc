@@ -1,0 +1,11 @@
+// Cloudflare Workers static assets: serves the HTML pages in this folder at openfieldsoccer.com
+// (privacy.html at /privacy, terms.html at /terms). No code runs; Cloudflare just serves the files.
+{
+  "name": "open-field-legal",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
