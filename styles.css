@@ -393,3 +393,72 @@ html.snap { scroll-snap-type: y proximity; scroll-padding-top: var(--header-h); 
 .landing-hero h1 span, .landing-hero h1 em { display: block; white-space: nowrap; }
 
 .waitlist .cf-turnstile { width: 100%; }
+
+/* ---------------------------------------------------------------------------------------------------
+   Design pass (2026-10-24): the wordmark's condensed italic for headings, pitch markings behind the hero
+   phone (the one bold element), and quieter structure everywhere else: no all-caps labels, rows and
+   hairlines instead of boxed cards, links without arrows.
+   --------------------------------------------------------------------------------------------------- */
+.landing-hero h1, .section-head h2, .cta-band h2, .doc-hero h1, .not-found h1 {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-style: italic; font-weight: 800;
+  letter-spacing: 0; line-height: 0.95;
+}
+.landing-hero h1 { font-size: clamp(56px, 7.4vw, 104px); }
+.landing-hero h1 span { display: block; white-space: nowrap; }
+.section-head h2 { font-size: clamp(40px, 5vw, 60px); }
+.cta-band h2, .page-cta .cta-band h2 { font-size: clamp(44px, 6vw, 72px); }
+.doc-hero h1 { font-size: clamp(48px, 6vw, 72px); }
+.not-found h1 { font-size: 56px; }
+
+/* Hero badge: plain sentence case in a soft pill. */
+.badge {
+  display: inline-block; margin: 0 0 20px; padding: 6px 14px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent); font-size: 14px; font-weight: 600;
+}
+
+/* Pitch markings behind the hero phone. */
+.hero-visual::before { display: none; }
+.pitch-lines {
+  position: absolute; z-index: 0; top: 50%; left: 50%; width: min(680px, 160%); height: auto;
+  transform: translate(-50%, -50%); overflow: visible; pointer-events: none;
+  fill: none; stroke: var(--accent); stroke-width: 2.5; opacity: 0.32;
+}
+.pitch-lines .spot { fill: var(--accent); stroke: none; }
+@media (prefers-color-scheme: dark) { .pitch-lines { opacity: 0.26; } }
+
+/* Features: rows with an icon, separated by hairlines, not boxed cards. */
+.features { gap: 0; }
+.feature {
+  background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; box-shadow: none;
+  padding: 20px 0; display: grid; grid-template-columns: 44px 1fr; gap: 2px 16px;
+}
+.feature .icon { grid-row: span 2; margin: 2px 0 0; }
+@media (min-width: 720px) { .features-2 { column-gap: 32px; } }
+
+/* FAQ: a list with hairlines. */
+.faq { gap: 0; }
+.faq details { background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0; }
+.faq details:first-child { border-top: 1px solid var(--line); }
+.faq summary { font-size: 18px; }
+
+/* Support: plain blocks with a top rule. */
+#support .card, .cards .card {
+  background: none; border: 0; border-top: 2px solid var(--text); border-radius: 0; box-shadow: none;
+  padding: 18px 0 8px;
+}
+#support .cards { column-gap: 40px; row-gap: 28px; }
+a.card:hover { border-color: var(--accent); }
+.card .go { text-decoration: underline; text-underline-offset: 3px; }
+
+/* No all-caps labels. */
+.toc-title { text-transform: none; letter-spacing: 0; font-size: 14px; }
+.doc th { text-transform: none; letter-spacing: 0; font-size: 14px; }
+.eyebrow { text-transform: none; letter-spacing: 0; font-size: 15px; }
+
+@media (max-width: 719px) {
+  .landing-hero h1 { font-size: 54px; }
+  .section-head h2 { font-size: 40px; }
+  .page-cta .cta-band h2 { font-size: 44px; }
+  .feature { padding: 16px 0; }
+  .pitch-lines { width: 150%; }
+}
