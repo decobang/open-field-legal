@@ -295,99 +295,12 @@ a.card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
 .cta-band .waitlist .status.ok { color: var(--mint); }
 .cta-band .waitlist .status.err { color: #ffb4b4; }
 
-/* Phone mockups: the app's screens in its dark Night Pitch theme, drawn in HTML. */
+/* Phone frames around the app's screenshots. */
 .phone {
   position: relative; z-index: 1; width: 300px; aspect-ratio: 9 / 19.5; padding: 11px; border-radius: 50px;
   background: #0a0e14; box-shadow: 0 0 0 2px #2a313c inset, 0 30px 60px rgba(14, 26, 43, 0.28);
 }
 .phone img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 40px; }
-.screen {
-  position: relative; height: 100%; overflow: hidden; border-radius: 40px; background: #0b1524; color: #e8eef6;
-  font-size: 12px; line-height: 1.35;
-}
-.screen .island { position: absolute; top: 10px; left: 50%; width: 96px; height: 28px; margin-left: -48px; border-radius: 20px; background: #000; z-index: 3; }
-.screen .status-bar { display: flex; justify-content: space-between; padding: 14px 26px 0; font-weight: 650; font-size: 13px; height: 46px; }
-.screen .bar-title { text-align: center; font-weight: 700; font-size: 15px; padding: 2px 0 10px; }
-.screen .content { padding: 0 14px; display: grid; gap: 10px; }
-.screen .label { font-size: 13px; font-weight: 700; color: #e8eef6; margin: 4px 2px 0; }
-.app-card { background: #14223a; border-radius: 16px; padding: 12px; display: grid; gap: 8px; }
-.app-card .title { font-size: 15px; font-weight: 700; }
-.app-card .row { display: flex; align-items: center; gap: 7px; color: #a3b1c6; }
-.app-card .row i { width: 12px; height: 12px; border-radius: 3px; background: #2a3c5c; flex: none; }
-.app-card .foot { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; }
-.avatars { display: flex; }
-.avatars span {
-  width: 22px; height: 22px; border-radius: 50%; margin-left: -6px; border: 2px solid #14223a;
-  display: grid; place-items: center; font-size: 8px; font-weight: 700; color: #0e3b2a; background: #a8e6cf;
-}
-.avatars span:first-child { margin-left: 0; }
-.avatars span:nth-child(2) { background: #ffd3a8; }
-.avatars span:nth-child(3) { background: #9fb7e8; }
-.avatars em { font-style: normal; color: #a3b1c6; margin-left: 6px; font-size: 11px; align-self: center; }
-.pill-btn { background: #a8e6cf; color: #0e3b2a; font-weight: 700; border-radius: 999px; padding: 6px 16px; font-size: 12px; }
-.badge-soon { display: inline-block; background: rgba(255, 196, 92, 0.16); color: #ffc45c; font-weight: 700; font-size: 10px; padding: 3px 8px; border-radius: 999px; }
-.vote { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.vote span { text-align: center; padding: 7px 0; border-radius: 10px; background: #1c2d4a; color: #a3b1c6; font-weight: 700; }
-.vote span.on { background: #2f9e6e; color: #fff; }
-.mini-rows { background: #14223a; border-radius: 16px; }
-.mini-row { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-bottom: 1px solid #22324c; }
-.mini-row:last-child { border-bottom: 0; }
-.mini-row .date { width: 34px; text-align: center; background: #1c2d4a; border-radius: 8px; padding: 3px 0; font-size: 9px; color: #a3b1c6; line-height: 1.2; }
-.mini-row .date b { display: block; font-size: 14px; color: #e8eef6; }
-.mini-row .t { font-weight: 650; font-size: 13px; }
-.mini-row .s { color: #a3b1c6; font-size: 11px; }
-.tab-bar {
-  position: absolute; left: 12px; right: 12px; bottom: 12px; height: 56px; border-radius: 28px;
-  background: rgba(30, 44, 68, 0.92); display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; text-align: center;
-  font-size: 9px; color: #a3b1c6;
-}
-.tab-bar span::before { content: ""; display: block; width: 18px; height: 18px; margin: 0 auto 3px; border-radius: 6px; background: #3a4d6e; }
-.tab-bar span.on { color: #a8e6cf; }
-.tab-bar span.on::before { background: #a8e6cf; }
-.team-banner {
-  height: 92px; margin: -46px -14px 0; padding-top: 46px;
-  background: linear-gradient(180deg, #1c6b4c, #0e3b2a);
-  background-image: linear-gradient(90deg, transparent 49.6%, rgba(255,255,255,0.18) 49.6%, rgba(255,255,255,0.18) 50.4%, transparent 50.4%), linear-gradient(180deg, #1c6b4c, #0e3b2a);
-}
-.team-id { display: flex; align-items: center; gap: 10px; margin-top: -22px; position: relative; }
-.crest {
-  width: 46px; height: 52px; flex: none; background: #0e3b2a; border: 2px solid #a8e6cf;
-  clip-path: polygon(50% 100%, 0 70%, 0 0, 100% 0, 100% 70%); display: grid; place-items: center;
-  color: #ffd3a8; font-weight: 800; font-size: 13px; padding-bottom: 6px;
-}
-.team-id .name { font-size: 16px; font-weight: 800; }
-.team-id .sub { color: #a3b1c6; font-size: 11px; }
-.attention { display: flex; align-items: center; gap: 8px; }
-.attention .dot { width: 8px; height: 8px; border-radius: 50%; background: #ffc45c; flex: none; }
-.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.tile { background: #14223a; border-radius: 14px; padding: 10px 12px; }
-.tile b { display: block; font-size: 22px; letter-spacing: -0.02em; }
-.tile span { color: #a3b1c6; font-size: 10px; }
-
-/* The player card (gold tier), like the app's. */
-.player-card {
-  position: relative; z-index: 1; width: 280px; aspect-ratio: 5 / 7; border-radius: 28px; padding: 22px 22px 18px;
-  color: #ffe7cf; background: linear-gradient(170deg, #1c4d3a 0%, #0b2a1d 60%, #06170f 100%);
-  box-shadow: 0 0 0 1px rgba(255, 211, 168, 0.35) inset, 0 30px 60px rgba(6, 23, 15, 0.45);
-  display: grid; grid-template-rows: auto 1fr auto auto; transform: rotate(-3deg);
-}
-.player-card::after {
-  content: ""; position: absolute; inset: 8px; border-radius: 22px; border: 1px solid rgba(255, 211, 168, 0.25); pointer-events: none;
-}
-.pc-top { display: flex; justify-content: space-between; align-items: flex-start; }
-.pc-ovr { font-size: 46px; font-weight: 800; line-height: 0.9; letter-spacing: -0.03em; }
-.pc-pos { font-size: 13px; font-weight: 800; letter-spacing: 0.1em; color: #ffd3a8; margin-top: 4px; }
-.pc-tier { font-size: 10px; font-weight: 800; letter-spacing: 0.14em; background: #ffd3a8; color: #0e3b2a; padding: 4px 9px; border-radius: 999px; }
-.pc-avatar {
-  justify-self: center; align-self: center; width: 96px; height: 96px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #2e9a70, #145a40); display: grid; place-items: center;
-  font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 800; font-size: 42px; color: #ffe7cf;
-}
-.pc-name { text-align: center; font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 800; font-size: 30px; letter-spacing: 0.02em; margin: 6px 0 10px; }
-.pc-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 22px; padding-top: 10px; border-top: 1px solid rgba(255, 211, 168, 0.3); font-size: 15px; }
-.pc-stats div { display: flex; gap: 8px; }
-.pc-stats b { min-width: 24px; font-weight: 800; }
-.pc-stats span { color: #ffd3a8; font-weight: 700; letter-spacing: 0.06em; }
 
 .section-head .eyebrow { margin: 0 0 10px; font-size: 13px; color: var(--accent); }
 .features-2 { align-content: center; }
@@ -424,11 +337,6 @@ html.snap { scroll-snap-type: y proximity; scroll-padding-top: var(--header-h); 
 .page-cta .cta-band p { font-size: 19px; }
 #support .card { padding: 20px 24px; }
 .page > .wrap { width: 100%; }
-/* The drawn mockup has fixed-size contents: scale the whole phone on shorter screens instead. */
-.page .phone.drawn { width: 300px; }
-@media (max-height: 860px) { .page .phone.drawn { zoom: 0.88; } }
-@media (max-height: 780px) { .page .phone.drawn { zoom: 0.78; } }
-@media (max-height: 700px) { .page .phone.drawn { zoom: 0.68; } }
 
 /* Phones: designed for scrolling, not shrunk from the desktop layout. The hero fills the first screen;
    the other sections take their natural height. */
@@ -448,7 +356,6 @@ html.snap { scroll-snap-type: y proximity; scroll-padding-top: var(--header-h); 
   .waitlist input[type="email"], .waitlist input.name, .waitlist .btn { flex: none; width: 100%; height: 52px; }
   .waitlist input[type="email"], .waitlist input.name { text-align: center; }
   .page .phone { width: min(250px, 66vw); }
-  .page .phone.drawn { width: 300px; zoom: 0.84; }
 
   .section-head { margin-bottom: 24px; }
   .section-head h2 { font-size: 30px; }
